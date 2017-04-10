@@ -1,0 +1,247 @@
+body {
+  background-image: url("background.png");
+  background-repeat: repeat;
+  font-family: 'Open Sans', sans-serif;
+}
+
+form {
+  & > :nth-child(1){
+    margin-bottom: 0;
+  }
+}
+
+input {
+  color: #a1a1a1 !important;
+
+  &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #a1a1a1 !important;
+  }
+
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #a1a1a1 !important;
+    opacity: 1;
+  }
+
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #a1a1a1 !important;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #a1a1a1 !important;
+  }
+}
+
+.container {
+  max-width: 100%
+}
+
+.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+}
+
+.search-wrapper {
+  padding: 1.5rem;
+  background-color: #1c688e;
+}
+
+.results-wrapper {
+  background-color: white;
+}
+
+.col-border {
+  border: 1px solid #ddd;
+}
+
+/* FILTERS */
+
+.filters {
+  padding: 0 2rem 2rem 2rem;
+
+  ul#restaurant-type {
+    li {
+      .active {
+        background-color: #2897c5;
+        color: white;
+        border-radius: 0.3rem;
+      }
+      a {
+        padding: 0 0.8rem !important;
+        color: black;
+      }
+      .restaurant-count {
+        color: #cacaca;
+
+        &.active {
+          color: white;
+        }
+      }
+    }
+  }
+
+  ul#rating {
+    li {
+      padding-left: 0.8rem !important;
+      a {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+.nav-with-count {
+  display: flex;
+  justify-content: space-between;
+
+  &.badge {
+    line-height: 0;
+  }
+}
+
+.results {
+  padding-top: 2rem;
+}
+
+.title {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.stars {
+  background-position: 0 top, 21px top, 42px top, 63px top, 84px top;
+  background-size: 1rem 1rem;
+  background-repeat: no-repeat;
+  display: flex;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.stars0 {
+  background-image: url(star-empty.png), url(star-empty.png), url(star-empty.png), url(star-empty.png), url(star-empty.png);
+}
+
+.stars1 {
+  background-image: url(stars-plain.png), url(star-empty.png), url(star-empty.png), url(star-empty.png), url(star-empty.png);
+}
+
+.stars2 {
+  background-image: url(stars-plain.png), url(stars-plain.png), url(star-empty.png), url(star-empty.png), url(star-empty.png);
+}
+
+.stars3 {
+  background-image: url(stars-plain.png), url(stars-plain.png), url(stars-plain.png), url(star-empty.png), url(star-empty.png);
+}
+
+.stars4 {
+  background-image: url(stars-plain.png), url(stars-plain.png), url(stars-plain.png), url(stars-plain.png), url(star-empty.png);
+}
+
+.stars5 {
+  background-image: url(stars-plain.png), url(stars-plain.png), url(stars-plain.png), url(stars-plain.png), url(stars-plain.png);
+}
+
+/* RESULTS */
+
+.results-header {
+  margin-left: 1.5rem;
+  padding-right: 1rem;
+}
+
+p#search-count {
+  display: flex;
+  align-items: baseline;
+
+  span.results-found {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  span.in-seconds {
+    padding-right: 10px;
+    padding-left: 4px;
+    font-size: 0.95rem;
+    font-weight: 300;
+  }
+
+  span.hline{
+    content: "";
+    flex: 1 1 auto;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    margin-right: 10px;
+  }
+}
+
+.results-list-wrapper {
+  padding-right: 1.5rem;
+
+  .restaurant {
+    margin: 2rem 1.5rem;
+
+    .restaurant-image {
+      img {
+        border-radius: 5px;
+      }
+    }
+
+    .description {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      margin-left: 1.5rem;
+
+      p.restaurant-title {
+        line-height: 1;
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+
+      p.restaurant-rating {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+
+        span.stars-count {
+          margin-right: 0.6rem;
+          color: #ffab66;
+        }
+
+        span.stars-inline {
+          min-width: 6.7rem;
+          line-height: 1;
+        }
+
+        span.reviews {
+          color: #cacaca;
+        }
+      }
+
+      p.restaurant-info {
+        margin-bottom: 0;
+        color: #cacaca;
+        font-weight: 300;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+.results-show {
+  margin-top: 3rem;
+  a {
+    padding: 0.5rem 3.5rem;
+    color: #cacaca;
+
+    &:hover {
+      color: #5e5e5e;
+    }
+  }
+}
