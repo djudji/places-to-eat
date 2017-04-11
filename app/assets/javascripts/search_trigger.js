@@ -5,7 +5,7 @@ $(document).on("turbolinks:load", function() {
   $input.keyup(function() {
     index.search($input.val(), {
       hitsPerPage: 3,
-      facets: "*"
+      facets: ["food_type"]
     }, searchCallback);
   }).focus();
 
@@ -48,6 +48,18 @@ $(document).on("turbolinks:load", function() {
           '</div>'
       );
     }
-    console.log(content);
+
+    var $restaurant_type = $("ul#restaurant-type");
+    li_elements = "";
+    $.each(content.facets.food_type, function(key, value){
+      li_elements += '<li class="nav-item">' +
+        '<a class="nav-link nav-with-count" href="#">' +
+          key +
+          '<span class="restaurant-count">' + value + '</span>' +
+        '</a>' +
+      '</li>'
+    });
+    $restaurant_type.html(li_elements);
+    //console.log(content.facets.food_type.key);
   };
 });
