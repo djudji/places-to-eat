@@ -2,6 +2,8 @@ $(document).on("turbolinks:load", function() {
   var client = algoliasearch("5XRT9YJOYK", "88ef7c02588d792e5241329b66a8dc83");
   var index = client.initIndex("test_RESTAURANT");
   var $input = $("input#search-box");
+  var $loadMore = $("#loadMore");
+
   $input.keyup(function() {
     index.search($input.val(), {
       hitsPerPage: 3,
