@@ -5,7 +5,8 @@ $(document).on("turbolinks:load", function() {
   $input.keyup(function() {
     index.search($input.val(), {
       hitsPerPage: 3,
-      facets: ["food_type"]
+      facets: ["food_type"],
+      maxValuesPerFacet: 7
     }, searchCallback);
   }).focus();
 
