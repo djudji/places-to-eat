@@ -188,6 +188,8 @@ p#search-count {
     .restaurant-image {
       img {
         border-radius: 5px;
+        max-width: 100px;
+        max-height: 100px;
       }
     }
 
