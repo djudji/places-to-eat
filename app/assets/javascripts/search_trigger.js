@@ -4,6 +4,8 @@ $(document).on("turbolinks:load", function() {
   var $input = $("input#search-box");
   var $loadMore = $("#loadMore");
 
+  $input.trigger("keyup");
+
   $input.keyup(function() {
     index.search($input.val(), {
       hitsPerPage: 3,
