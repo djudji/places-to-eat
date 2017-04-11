@@ -26,5 +26,7 @@ arr1.each do |e1|
   end
 end
 
-File.open(OUTPUT, 'w') { |f| f.write(merged) }
+merged.map { |h| h.to_json.gsub!(/\"/, '\'') }
+
+File.open(OUTPUT, 'w') { |f| f.write(merged.to_json) }
 File.delete(CSV_TO_JSON_FILE) if File.exist?(CSV_TO_JSON_FILE)
